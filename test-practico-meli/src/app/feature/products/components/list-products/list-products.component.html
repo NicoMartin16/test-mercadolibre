@@ -1,0 +1,19 @@
+
+<app-breadcrumbs [listCategories]="listCategories"></app-breadcrumbs>
+<div class="container-list">
+    <div class="container-item" *ngFor="let item of listItems | async"  (click)="navigateDetail(item)">
+        <div class="container-thumbnail">
+            <img class="imagen-thumbnail" src="{{item.picture}}" alt="imagen del thumbail">
+        </div>
+        <div class="container-description">
+            <div class="container-price">
+                <p class="price">{{item.price.decimals | currency : 'USD': 'symbol': '4.0-0'}}</p>
+                <img *ngIf="item.free_shipping" src="../../../../../assets/ic_shipping.png" alt="El producto lleva envio">
+            </div>
+            <p class="title">{{item.title}}</p>
+        </div>
+        <div class="container-address">
+            <p>Capital Federal</p>
+        </div>
+    </div>
+</div>

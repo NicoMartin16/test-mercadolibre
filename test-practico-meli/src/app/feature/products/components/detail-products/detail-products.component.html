@@ -1,0 +1,16 @@
+<app-breadcrumbs [listCategories]="listCategories"></app-breadcrumbs>
+<div class="container-detail">
+    <div class="container-thumbnail">
+        <img src="{{item.picture}}" alt="imagen de thumbnail">
+    </div>
+    <div class="container-detail-item">
+        <p class="condition">{{item.condition}} - {{item.sold_quantity}} Vendidos</p>
+        <p class="title">{{item.title}}</p>
+        <p class="price">{{item.price.decimals | currency: 'USD': 'symbol': '4.0-0'}}</p>
+        <button>Comprar</button>
+    </div>
+    <div class="container-description">
+        <p class="title-description">Descripción del producto</p>
+        <p class="description">{{item.description}}</p>
+    </div>
+</div>
