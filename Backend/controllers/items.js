@@ -96,7 +96,10 @@ const getItemById = async (req = request, res = response, next) => {
     res.status(200).json(respuesta);
     
   } catch (error) {
-    console.log('este es el error', error);
+    res.status(404).json({
+      message: 'Item not found',
+      error: 'BAD_REQUEST_NOT_FOUND'
+    })
   }
 
 };

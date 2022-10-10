@@ -1,7 +1,7 @@
 <app-breadcrumbs [listCategories]="listCategories"></app-breadcrumbs>
-<div class="container-detail">
+<div *ngIf="isFound && item" class="container-detail">
     <div class="container-thumbnail">
-        <img src="{{item.picture}}" alt="imagen de thumbnail">
+        <img  src="{{item.picture}}" alt="imagen de thumbnail">
     </div>
     <div class="container-detail-item">
         <p class="condition">{{item.condition}} - {{item.sold_quantity}} Vendidos</p>
@@ -14,3 +14,5 @@
         <p class="description">{{item.description}}</p>
     </div>
 </div>
+<app-not-found *ngIf="!isFound" [error]="error"></app-not-found>
+

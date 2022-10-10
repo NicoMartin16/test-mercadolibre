@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 
 
@@ -12,7 +13,8 @@ import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.compo
 @NgModule({
   declarations: [
     ShareComponent,
-    BreadcrumbsComponent
+    BreadcrumbsComponent,
+    NotFoundComponent
   ],
   imports: [
     CommonModule,
@@ -21,7 +23,8 @@ import { BreadcrumbsComponent } from './components/breadcrumbs/breadcrumbs.compo
   ],
   exports: [
     ShareComponent,
-    BreadcrumbsComponent
+    BreadcrumbsComponent,
+    NotFoundComponent
   ]
 })
 export class CoreModule { }

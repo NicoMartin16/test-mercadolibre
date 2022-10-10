@@ -1,0 +1,13 @@
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+
+@Component({
+  selector: 'app-not-found',
+  templateUrl: './not-found.component.html',
+  styleUrls: ['./not-found.component.sass']
+})
+export class NotFoundComponent  {
+
+  @Input() error: any;
+
+
+}

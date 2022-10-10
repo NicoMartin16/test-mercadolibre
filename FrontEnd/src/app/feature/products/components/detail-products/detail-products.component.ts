@@ -14,6 +14,8 @@ export class DetailProductsComponent implements OnInit {
 
   public item!: ItemRes;
   public listCategories: string[] = [];
+  public isFound: boolean = true;
+  public error: any;
 
   constructor(
     private route: ActivatedRoute,
@@ -21,13 +23,19 @@ export class DetailProductsComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe((params: any) => {
-      this.itemService.getItemById(params.id).subscribe(this.getItem);
+      this.itemService.getItemById(params.id).subscribe(this.getItem, this.getError);
     })
   }
 
   public getItem = (resp: ItemRes) => {
     this.item = resp;
     this.listCategories = resp.categories;
+  }
+
+  public getError = (error: any) => {
+    
+    this.isFound = false;
+    this.error = error;
   }
 
 }
