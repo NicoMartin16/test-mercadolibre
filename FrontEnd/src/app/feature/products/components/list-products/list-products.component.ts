@@ -29,6 +29,8 @@ export class ListProductsComponent implements OnInit {
     })
   }
 
+  
+
   navigateDetail(item: Item) {
     this.router.navigate(['/items', item.id])
   }

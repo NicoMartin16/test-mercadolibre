@@ -39,7 +39,10 @@ const itemsGet = async (req = request, res = response, next) => {
 
     res.status(200).json(respuesta);
   } catch (error) {
-    next(error);
+    res.status(404).json({
+      message: 'Item not found',
+      error: 'BAD_REQUEST_NOT_FOUND'
+    })
   }
 
 };
@@ -108,9 +111,6 @@ const getMostCategories = async (categories) => {
   let ids = categories.map((category) => category.id);
   let mostid = ids.sort((id1,id2) => ids.filter((valor) => valor === id1).length - ids.filter((valor) => valor === id2).length).pop();
   return mostid;
-  // let uniqueCategories = [... new Set(ids)];
-  // uniqueCategories = uniqueCategories.slice(uniqueCategories.length - 5, uniqueCategories.length);
-  // return uniqueCategories;
 }
 
 
