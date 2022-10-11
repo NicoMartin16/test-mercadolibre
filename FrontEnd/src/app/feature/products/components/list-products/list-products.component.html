@@ -1,7 +1,7 @@
 
 <app-breadcrumbs [listCategories]="listCategories"></app-breadcrumbs>
 <div class="container-list">
-    <div class="container-item" *ngFor="let item of listItems | async"  (click)="navigateDetail(item)">
+    <div role="button" class="container-item" *ngFor="let item of listItems | async"  (click)="navigateDetail(item)">
         <div class="container-thumbnail">
             <img class="imagen-thumbnail" src="{{item.picture}}" alt="imagen del thumbail">
         </div>
